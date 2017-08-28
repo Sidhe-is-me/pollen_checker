@@ -14,3 +14,6 @@ This Gem will allow a user to input a zip-code to retrieve the pollen level for
 for that zip-code.
 The CLI will output a pollen level and then ask the user if they would like
 the types of pollen Y/N
+
+How to publish the gem 
+http://railscasts.com/episodes/245-new-gem-with-bundler?autoplay=true
