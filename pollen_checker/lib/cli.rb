@@ -1,0 +1,3 @@
+class PollenChecker::CLI
+
+end 

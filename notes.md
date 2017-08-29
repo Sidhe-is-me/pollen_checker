@@ -1,7 +1,7 @@
 Notes on building my Ruby Gem pollen_checker
 
-1. Plan your gem, imagine your interface
-2. Start with e project structure- google
+1. Plan your gem, imagine your interface [x]
+2. Start with e project structure- google [x]
 3. Start with the entry point - the file run
 4. force that to build the CLI interface
 5. stub out the interface
@@ -15,5 +15,5 @@ for that zip-code.
 The CLI will output a pollen level and then ask the user if they would like
 the types of pollen Y/N
 
-How to publish the gem 
+How to publish the gem
 http://railscasts.com/episodes/245-new-gem-with-bundler?autoplay=true
