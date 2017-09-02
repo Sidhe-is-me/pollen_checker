@@ -2,8 +2,8 @@
 # Our Cli Contoller
 
 class PollenChecker::CLI
-  attr_accessor  :pollen
-  @@zipcode = nil
+  attr_accessor  :pollen_level
+  # @@zipcode = nil
 
 
   def call
@@ -12,21 +12,24 @@ class PollenChecker::CLI
     menu
   end
 
-  def self.zipcode
-    @@zipcode = gets.strip
-  end
+  # def self.zipcode
+  #   zipcode = gets.strip
+  # end
 
 def pollen_zip_code
   puts "Please input 5 digit zipcode"
-  # zipcode = gets.strip
-   @pollen = PollenChecker::Pollen_level.today
+   input = gets.strip
+
 end
 
 def list_pollen_level
   #this will scrape the pollen levle info from pollen.com
-  @pollen
-    pollen_level = 0
-    puts "Today's pollen level is #{pollen_level}"
+
+    @pollen_level = PollenChecker::Pollen_level.today
+    @pollen_level.each.with_index do |pollen_level,i|
+      puts "#{i}.#{pollen_level.current_level} - #{pollen_level.history}- #{pollen_level.top_allergens}"
+    end
+    puts "Today's pollen level is {pollen_level.current_level}"
 end
 
 
@@ -42,14 +45,14 @@ def menu
     case input
     when "1"
       #scrape 2nd layer of pollen.com for pollen types
-            pollen_type = "ragweed"
-            puts  "The type of pollen in the area is #{pollen_type}, don't forget
+        # @pollen_level = PollenChecker::Pollen_level.today
+            puts  "The type(s) of pollen(s) in the area: {Pollen_level.zipcode.top_allergens}, don't forget
             to take your Quercitin!"
             call
     when "2"
-      puts "The pollen level yesterday was X"
+      puts "The pollen level yesterday was {zipcode.history}"
     when "3"
-      puts "The Pollen forecast is x"
+      puts "The Pollen forecast is {zipcode.forecast}"
     else
       puts "Not sure what you would like, type:
       1. Would you like to know the type of pollen(s)in the area?
@@ -61,32 +64,7 @@ end
 goodby
 end
 
-# def menu
-#   puts "What would you like to do:
-#   1. Would you like to know the type of pollen(s)in the area?
-#   2. Check another zipcode
-#   or exit"
-#   input = nil
-#   while input != "exit"
-#     input = gets.strip.downcase
-#     case input
-#     when "1"
-#       #scrape 2nd layer of pollen.com for pollen types
-#             pollen_type = "ragweed"
-#             puts  "The type of pollen in the area is #{pollen_type}, don't forget
-#             to take your Quercitin!"
-#             call
-#     when "2"
-#       call
-#     else
-#       puts "Not sure what you would like, type
-#       1. for the type of pollen(s)in the area
-#       2. To check another zipcode
-#       or exit"
-#     end
-# end
-# goodby
-# end
+
 
 
 def goodby
