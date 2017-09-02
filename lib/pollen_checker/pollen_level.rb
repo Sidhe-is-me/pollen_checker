@@ -1,6 +1,6 @@
 class PollenChecker::Pollen_level
   attr_accessor :current_level, :history, :forecast, :top_allergens, :url
-
+  @@all =[]
 def self.today
   #this should return the pollen level with info for the
   #inputed zipcode for the day
@@ -17,6 +17,7 @@ def self.today
   # zip_1_forecast ="11"
   # zip_1.forcast = "Tomorrow : Pollen level : #{zip_1_forecast}"
   zip_1.top_allergens = ['Ragweed','Chenopods','Nettel']
+  #I am going to need to iterate over the url oject and use that as an include? with the zip?
   zip_1.url = 'https://www.pollen.com/forecast/current/pollen/22081'
 
 

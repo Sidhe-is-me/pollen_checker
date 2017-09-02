@@ -2,7 +2,9 @@
 # Our Cli Contoller
 
 class PollenChecker::CLI
-  attr_accessor :zipcode
+  attr_accessor  :pollen
+  @@zipcode = nil
+
 
   def call
     pollen_zip_code
@@ -10,13 +12,19 @@ class PollenChecker::CLI
     menu
   end
 
+  def self.zipcode
+    @@zipcode = gets.strip
+  end
+
 def pollen_zip_code
-  puts "pollen xip"
-   @zipcode = PollenChecker::Pollen_level.today
+  puts "Please input 5 digit zipcode"
+  # zipcode = gets.strip
+   @pollen = PollenChecker::Pollen_level.today
 end
 
 def list_pollen_level
   #this will scrape the pollen levle info from pollen.com
+  @pollen
     pollen_level = 0
     puts "Today's pollen level is #{pollen_level}"
 end
