@@ -17,3 +17,11 @@ the types of pollen Y/N
 
 How to publish the gem
 http://railscasts.com/episodes/245-new-gem-with-bundler?autoplay=true
+
+
+What is a Pollen Level in a zip-code?
+- a pollen level has a zip-code
+- a pollen level has types of pollens
+- a pollen level has a url
+-pollen level has a history
+-

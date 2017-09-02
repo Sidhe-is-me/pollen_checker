@@ -2,6 +2,7 @@
 # Our Cli Contoller
 
 class PollenChecker::CLI
+  attr_accessor :zipcode
 
   def call
     pollen_zip_code
@@ -10,11 +11,8 @@ class PollenChecker::CLI
   end
 
 def pollen_zip_code
-  puts "Enter the zip code you
-  would like the pollen level checked for:"
-  zipcode = gets.strip
-  # zipcode must be only 5 numbers and a valid zipcode
-  #this will take the zipcode and check it against the pollen.com website scraper
+  puts "pollen xip"
+   @zipcode = PollenChecker::Pollen_level.today
 end
 
 def list_pollen_level
@@ -27,7 +25,8 @@ end
 def menu
   puts "What would you like to do:
   1. Would you like to know the type of pollen(s)in the area?
-  2. Check another zipcode
+  2. Check history
+  3.Check Forecast
   or exit"
   input = nil
   while input != "exit"
@@ -40,11 +39,46 @@ def menu
             to take your Quercitin!"
             call
     when "2"
-      call
+      puts "The pollen level yesterday was X"
+    when "3"
+      puts "The Pollen forecast is x"
+    else
+      puts "Not sure what you would like, type:
+      1. Would you like to know the type of pollen(s)in the area?
+      2. Check history
+      3.Check Forecast
+      or exit"
     end
 end
 goodby
 end
+
+# def menu
+#   puts "What would you like to do:
+#   1. Would you like to know the type of pollen(s)in the area?
+#   2. Check another zipcode
+#   or exit"
+#   input = nil
+#   while input != "exit"
+#     input = gets.strip.downcase
+#     case input
+#     when "1"
+#       #scrape 2nd layer of pollen.com for pollen types
+#             pollen_type = "ragweed"
+#             puts  "The type of pollen in the area is #{pollen_type}, don't forget
+#             to take your Quercitin!"
+#             call
+#     when "2"
+#       call
+#     else
+#       puts "Not sure what you would like, type
+#       1. for the type of pollen(s)in the area
+#       2. To check another zipcode
+#       or exit"
+#     end
+# end
+# goodby
+# end
 
 
 def goodby

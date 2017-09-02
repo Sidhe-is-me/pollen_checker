@@ -1,4 +1,5 @@
 
-#this file acts as my environment 
+#this file acts as my environment
 require_relative "pollen_checker/version"
+require_relative "pollen_checker/pollen_level"
 require_relative './pollen_checker/cli'
