@@ -2,8 +2,8 @@ Notes on building my Ruby Gem pollen_checker
 
 1. Plan your gem, imagine your interface [x]
 2. Start with e project structure- google [x]
-3. Start with the entry point - the file run
-4. force that to build the CLI interface
+3. Start with the entry point - the file run [x]
+4. force that to build the CLI interface [x]
 5. stub out the interface
 6. start making things real
 7. discover objects
