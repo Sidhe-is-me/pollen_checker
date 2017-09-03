@@ -21,11 +21,10 @@ def pollen_zip_code
 end
 
 def list_pollen_level
-  #this will scrape the pollen levle info from pollen.com
-
-    @pollen_level = PollenChecker::Pollen_level.today
-    @pollen_level.each.with_index do |pollen_level,i|
-      puts "#{i}.#{pollen_level.current_level} - #{pollen_level.history}- #{pollen_level.top_allergens}"
+  #this will scrape the pollen level info from pollen.com
+    pollen_level = PollenChecker::Pollen_level.today
+    pollen_level.each do |pollen_level|
+      puts "#{pollen_level.current_level}  #{pollen_level.history} #{pollen_level.top_allergens}"
     end
     puts "Today's pollen level is {pollen_level.current_level}"
 end
