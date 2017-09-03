@@ -12,13 +12,11 @@ class PollenChecker::CLI
     menu
   end
 
-  # def self.zipcode
-  #   zipcode = gets.strip
-  # end
 
 def pollen_zip_code
   puts "Please input 5 digit zipcode"
    input = gets.strip
+  #  @zipcode = input
 
 end
 
