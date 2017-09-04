@@ -9,8 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Yvonne Dreptate'"]
   spec.email         = ["'yvonnedreptate@gmail.com'"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{Enter a zipcode to get pollen level data for your area}
   spec.homepage      = "https://github.com/Sidhe-is-me/pollen_checker"
   spec.license       = "MIT"
 
