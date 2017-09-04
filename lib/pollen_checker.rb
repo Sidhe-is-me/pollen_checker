@@ -1,6 +1,6 @@
 
 #this file acts as my environment
-# require 'open-uri'
+require 'open-uri'
 require "pry"
 require "nokogiri"
 
